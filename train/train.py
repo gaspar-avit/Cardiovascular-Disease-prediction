@@ -61,6 +61,7 @@ dataset.drop(dataset[(dataset['ap_lo'] > dataset['ap_lo'].quantile(0.975)) |
 # Convert 'age' to years
 dataset["age"] = dataset["age"].map(lambda x: math.ceil(x/365))
 dataset["gender"] = dataset["gender"].astype('category')
+dataset["height"] = dataset["height"].astype(int)
 dataset["weight"] = dataset["weight"].astype(int)
 dataset["cholesterol"] = dataset["cholesterol"].astype('category')
 dataset["gluc"] = dataset["gluc"].astype('category')
@@ -147,4 +148,4 @@ plt.show()
 
 
 # Save model
-model.save_model("model.cbm")
+model.save_model("../model.cbm")
